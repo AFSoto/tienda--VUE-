@@ -1,0 +1,22 @@
+:root {
+  /* Colores de marca - tienda de ropa */
+  --color-primary:     #1a1a1a;   /* negro principal */
+  --color-secondary:   #c9a96e;   /* dorado/beige premium */
+  --color-accent:      #e8e0d5;   /* crema suave */
+  --color-bg:          #fafaf9;   /* fondo general */
+  --color-surface:     #ffffff;   /* cards, modales */
+  --color-text:        #1a1a1a;
+  --color-text-muted:  #6b7280;
+  --color-border:      #e5e7eb;
+  --color-error:       #ef4444;
+  --color-success:     #22c55e;
+
+  /* Tipografía */
+  --font-sans:    'Inter', sans-serif;
+  --font-heading: 'Playfair Display', serif;
+
+  /* Espaciado base */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  16px;
+}
