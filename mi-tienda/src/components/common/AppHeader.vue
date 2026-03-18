@@ -1,9 +1,11 @@
 <script setup>
 import { ref } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
+import { useCartStore } from '@/stores/useCartStore'
 
-const route = useRoute()
-const menuOpen = ref(false)
+const route     = useRoute()
+const cartStore = useCartStore()
+const menuOpen  = ref(false)
 
 const navLinks = [
   { name: 'Home',    to: '/' },
@@ -11,9 +13,7 @@ const navLinks = [
   { name: 'Contact', to: '/contact' },
 ]
 
-const toggleMenu = () => {
-  menuOpen.value = !menuOpen.value
-}
+const toggleMenu = () => { menuOpen.value = !menuOpen.value }
 </script>
 
 <template>
@@ -56,7 +56,7 @@ const toggleMenu = () => {
             </svg>
             <!-- Badge contador del carrito -->
             <span class="absolute -top-2 -right-2 bg-black text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
-              0
+              {{ cartStore.totalItems }}
             </span>
           </RouterLink>
 

@@ -1,36 +1,19 @@
 <script setup>
 import { RouterView } from 'vue-router'
+import AppHeader from '@/components/common/AppHeader.vue'
+import AppFooter from '@/components/common/AppFooter.vue'
 </script>
 
 <template>
-  <div>
-    <!-- Aquí irá el Header -->
+  <div class="min-h-screen flex flex-col">
 
-    <main>
-      <RouterView />  <!-- Aquí se renderizan las vistas hijas -->
+    <AppHeader />
+
+    <main class="flex-1">
+      <RouterView />
     </main>
 
-    <!-- Aquí irá el Footer -->
+    <AppFooter />
+
   </div>
 </template>
-```
-
----
-
-## ¿Para qué sirve MainLayout.vue?
-
-Piénsalo así — sin layout:
-```
-/ → HomeView
-/shop → ShopView
-/cart → CartView
-```
-
-Cada vista tendría que incluir su propio Header y Footer. Si cambias el Header, lo cambias en 6 archivos.
-
-Con layout:
-```
-MainLayout
-├── AppHeader   ← una sola vez
-├── RouterView  ← aquí cambia el contenido según la ruta
-└── AppFooter   ← una sola vez
